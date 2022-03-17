@@ -24,7 +24,8 @@ namespace CoinLegsSignalForwarder.Controller
         {
             Task.Run(() =>
             {
-                Logger.Info($"Received {content}");
+                var input = content.ToString();
+                Logger.Info($"Received {input}");
                 var forwards = _config.GetSection("Forwards");
                 if (forwards != null)
                 {
